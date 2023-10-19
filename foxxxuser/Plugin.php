@@ -27,7 +27,8 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            '\Foxxxhunt\Foxxxuser\Components\FoxxxProfile' => 'FoxxxProfile'
+            '\Foxxxhunt\Foxxxuser\Components\FoxxxProfile' => 'FoxxxProfile',
+            '\Foxxxhunt\Foxxxuser\Components\Foxxxuserlist' => 'Foxxxuserlist',
         ];
     }
 

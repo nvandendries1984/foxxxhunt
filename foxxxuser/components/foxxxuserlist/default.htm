@@ -1,0 +1,15 @@
+{% for user in users %}
+<div class="user-card">
+  {% if user.nickname %}
+      <div class="user-card-body">
+          <img src="{{ user.avatar.path }}" class="user-avatar" alt="{{ user.nickname }}">
+          <div class="user-info">
+              <p class="user-nickname">{{ user.nickname }}</p>
+              <p class="user-account-type">{{ user.account_type }}</p>
+              <p class="user-account-seen">Last Seen: {{ user.last_seen }}</p>
+          </div>
+      </div>
+  {% endif %}
+</div>
+
+{% endfor %}

@@ -10,7 +10,7 @@ FoXXXhunt Plugin Creation
 - FoxxxUser Events
 
 ## FoxxxHunt Event (Model) (Done)
-- FoxxxHunt Create
+- FoxxxHunt Create/Edit
 - FoxxxHunt List
 - FoxxxHunt Details
 - Foxxxhunt Gamemodes

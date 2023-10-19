@@ -2,9 +2,11 @@
 <div class="user-card">
   {% if user.nickname %}
       <div class="user-card-body">
+        <a href="{{ 'details/' ~ user.slug }}">
           <img src="{{ user.avatar.path }}" class="user-avatar" alt="{{ user.nickname }}">
+        </a>
           <div class="user-info">
-              <p class="user-nickname">{{ user.nickname }}</p>
+              <p class="user-nickname"><a href="{{ 'details/' ~ user.slug }}">{{ user.nickname }}</a></p>
               <p class="user-account-type">{{ user.account_type }}</p>
               <p class="user-account-seen">Last Seen: {{ carbon(user.last_seen).setTimezone('Europe/Amsterdam').formatLocalized('%d-%m-%Y %H:%M:%S') }}</p>
           </div>

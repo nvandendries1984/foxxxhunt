@@ -2,6 +2,7 @@
 
 use Cms\Classes\ComponentBase;
 use RainLab\User\Models\User;
+use Cms\Classes\Page;
 
 class Foxxxuserlist extends ComponentBase
 {
@@ -15,7 +16,28 @@ class Foxxxuserlist extends ComponentBase
 
     public function defineProperties()
     {
-        return [];
+        return [
+            'detailsPage' => [
+                'title'       => 'Details Page',
+                'description' => 'Select the page to display item details',
+                'type'        => 'dropdown',
+                'default'     => '',
+                'options'     => $this->getPageOptions()
+            ]
+        ];
+    }
+
+    public function getPageOptions()
+    {
+        $pages = Page::listInTheme('foxxxhunt');
+    
+        $pageOptions = [];
+    
+        foreach ($pages as $page) {
+            $pageOptions[$page->fileName] = $page->title;
+        }
+    
+        return $pageOptions;
     }
 
     public function onRun()

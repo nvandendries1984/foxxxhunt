@@ -29,6 +29,7 @@ class Plugin extends PluginBase
         return [
             '\Foxxxhunt\Foxxxuser\Components\FoxxxProfile' => 'FoxxxProfile',
             '\Foxxxhunt\Foxxxuser\Components\Foxxxuserlist' => 'Foxxxuserlist',
+            '\Foxxxhunt\Foxxxuser\Components\Foxxxuserdetails' => 'Foxxxuserdetails',
         ];
     }
 

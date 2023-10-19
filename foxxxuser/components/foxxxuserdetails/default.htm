@@ -13,15 +13,18 @@ crossorigin=""></script>
         <strong>Sex:</strong> {{ userDetails.sex }} <br>
         <strong>Type:</strong> {{ userDetails.account_type }} <br>
     </p>
-    <div id="map"></div>
+    <div id="map" style="position: relative;width: -webkit-fill-available;height: 300px;border-radius: 5px;border: 2px solid var(--fh-pink);"></div>
+    
 </div>
 
 <script>
     var map = L.map('map').setView([{{ userDetails.location }}], 9);
+
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
+
     var circle = L.circle([{{ userDetails.location }}], {
         color: '#ff00ff',
         fillColor: '#ff00ff',

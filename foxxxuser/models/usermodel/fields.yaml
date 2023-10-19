@@ -33,6 +33,7 @@ fields:
             Withness: Withness
             Moderator: Moderator
             Organisation: Organisation
+            Developer: Developer
         showSearch: true
         type: dropdown
     phone:

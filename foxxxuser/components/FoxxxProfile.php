@@ -2,6 +2,7 @@
 
 use Cms\Classes\ComponentBase;
 use RainLab\User\Models\User as UserModel;
+use RainLab\User\Models\UserGroup;
 use Auth;
 use Flash;
 use Input;
@@ -19,6 +20,16 @@ class FoxxxProfile extends ComponentBase
     public function defineProperties()
     {
         return [];
+    }
+
+    public function registerUserGroups()
+    {
+        UserModel::extend(function($model) {
+            // Automatisch toevoegen aan de 'foxxxhunt'-groep bij registratie
+            $model->belongsTo['groups']->addEagerConstraint(function($query) {
+                $query->where('code', 'foxxxhunt');
+            });
+        });
     }
 
     public function onUpdateProfile()

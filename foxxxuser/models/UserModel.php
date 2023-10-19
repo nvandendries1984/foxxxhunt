@@ -2,10 +2,8 @@
 
 use Model;
 use RainLab\User\Models\User;
+use RainLab\User\Models\Group;
 
-/**
- * Model
- */
 class UserModel extends Model
 {
     use \October\Rain\Database\Traits\Validation;

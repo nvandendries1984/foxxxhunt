@@ -1,0 +1,17 @@
+plugin:
+    name: 'foxxxhunt.foxxxhelp::lang.plugin.name'
+    description: 'foxxxhunt.foxxxhelp::lang.plugin.description'
+    author: FoXXXhunt
+    icon: oc-icon-question-circle
+    homepage: ''
+permissions:
+    faqmanager:
+        tab: 'foxxxhunt.foxxxhelp::lang.plugin.name'
+        label: 'FAQ Manager'
+navigation:
+    main-menu-item-faq:
+        label: FoXXXhelp
+        url: foxxxhunt/foxxxhelp/foxxxfaqcontroller
+        icon: icon-question-circle
+        permissions:
+            - faqmanager

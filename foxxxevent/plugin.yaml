@@ -1,0 +1,6 @@
+plugin:
+    name: 'foxxxhunt.foxxxevent::lang.plugin.name'
+    description: 'foxxxhunt.foxxxevent::lang.plugin.description'
+    author: FoXXXhunt
+    icon: icon-star
+    homepage: ''

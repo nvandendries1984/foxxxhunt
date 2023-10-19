@@ -1,0 +1,125 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+crossorigin=""/>
+
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+crossorigin=""></script>
+
+<div>
+    {% if user.avatar.path %}
+        <img src="{{ user.avatar.path }}" class="img-thumbnail" alt="{{ user.nickname }}">
+    {% else %}
+    <div class="alert alert-warning" role="alert">
+        Please upload a Avatar!
+    </div>
+    {% endif %}
+
+    <div class="mt-2">
+        <p>
+            {% if user.nickname %} Nickname: {{ user.nickname }}<br>{% endif %}
+            {% if user.sex %} Sex: {{ user.sex }}<br>{% endif %}
+            {% if user.account_type %} Type: {{ user.account_type }}<br>{% endif %}
+            {% if user.phone %} Phone: {{ user.phone }}{% endif %}
+        </p>
+    </div>
+</div>
+<div>
+    {{ form_ajax('onUpdateProfile', {'data-request-files': true}) }}
+    <div class="form-group">
+        <label for="nickname" class="form-label">Nickname</label>
+        <input type="text" class="form-control" id="nickname" name="nickname" value="{{ user.nickname }}">
+    </div>
+
+    <div class="form-group">
+        <label for="location">Location</label>
+        <div id="map" style="height: 300px;"></div>
+        <input type="hidden" id="location" name="location">
+        {% if user.location %}
+            <p>Current location is: {{ user.location }}
+        {% else %}
+        <div class="alert alert-warning" role="alert">
+            Please set your location!
+        </div>
+        {% endif %}</p>
+    </div>
+    
+    <div class="form-group">
+        <label for="sex">Sex</label>
+        <select class="form-select" id="sex" name="sex">
+            <option value="Male" {{ user.sex == 'Male' ? 'selected' : '' }}>Male</option>
+            <option value="Female" {{ user.sex == 'Female' ? 'selected' : '' }}>Female</option>
+            <option value="Other" {{ user.sex == 'Other' ? 'selected' : '' }}>Other</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="account_type">Type</label>
+        <select class="form-select" id="account_type" name="account_type">
+            <option value="Hunter" {{ user.account_type == 'Hunter' ? 'selected' : '' }}>Hunter</option>
+            <option value="Hunted" {{ user.account_type == 'Hunted' ? 'selected' : '' }}>Hunted</option>
+            <option value="Witness" {{ user.account_type == 'Witness' ? 'selected' : '' }}>Witness</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="text" class="form-control" id="phone" name="phone" value="{{ user.phone }}">
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="avatar">Avatar</label>
+        <input class="form-control" type="file" id="avatar" name="avatar">
+    </div>
+    
+    <button class="btn btn-default" type="submit">Update Profile</button>
+    {{ form_close() }}
+</div>
+
+{% if user.location %}
+<script>
+    var map = L.map('map').setView([{{ user.location }}], 13); // Initialiseer de kaart met de begincoördinaten en zoomniveau
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 20,
+    }).addTo(map); // Voeg een kaartlaag toe
+
+    var marker = L.marker([{{ user.location }}]).addTo(map); // Voeg een marker toe
+
+    L.control.scale().addTo(map); // Voeg een schaalindicator toe
+
+
+    map.on('click', function(e) {
+        var location = e.latlng; // Haal de geselecteerde locatie op
+        marker.setLatLng(location); // Verplaats de marker naar de geselecteerde locatie
+
+        // Sla de locatiegegevens op in het verborgen veld
+        document.getElementById('location').value = location.lat + ', ' + location.lng;
+    });
+
+    map.scrollWheelZoom.enable(); // Sta zoomen met het muiswiel toe
+
+</script>
+{% else %}
+<script>
+    var map = L.map('map').setView([52.28234, 5.52428 ], 13); // Initialiseer de kaart met de begincoördinaten en zoomniveau
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 20,
+    }).addTo(map); // Voeg een kaartlaag toe
+
+    var marker = L.marker([52.28234, 5.52428 ]).addTo(map); // Voeg een marker toe
+
+    L.control.scale().addTo(map); // Voeg een schaalindicator toe
+
+
+    map.on('click', function(e) {
+        var location = e.latlng; // Haal de geselecteerde locatie op
+        marker.setLatLng(location); // Verplaats de marker naar de geselecteerde locatie
+
+        // Sla de locatiegegevens op in het verborgen veld
+        document.getElementById('location').value = location.lat + ', ' + location.lng;
+    });
+
+    map.scrollWheelZoom.enable(); // Sta zoomen met het muiswiel toe
+
+</script>
+{% endif %}

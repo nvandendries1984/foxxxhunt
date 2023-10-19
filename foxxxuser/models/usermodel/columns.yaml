@@ -1,0 +1,51 @@
+columns:
+    name:
+        label: name
+        type: text
+        searchable: true
+        sortable: true
+    email:
+        label: email
+        type: text
+        searchable: true
+        sortable: true
+    last_login:
+        label: last_login
+        type: text
+        searchable: true
+        sortable: true
+    surname:
+        label: surname
+        type: text
+        searchable: true
+        sortable: true
+    last_seen:
+        label: last_seen
+        type: text
+        searchable: true
+        sortable: true
+    nickname:
+        label: nickname
+        type: text
+        searchable: true
+        sortable: true
+    sex:
+        label: sex
+        type: text
+        searchable: true
+        sortable: true
+    location:
+        label: location
+        type: text
+        searchable: true
+        sortable: true
+    account_type:
+        label: account_type
+        type: text
+        searchable: true
+        sortable: true
+    phone:
+        label: phone
+        type: text
+        searchable: true
+        sortable: true

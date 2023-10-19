@@ -1,0 +1,11 @@
+name: FoxxxUsersController
+modelClass: foxxxhunt\Foxxxuser\Models\UserModel
+form: $/foxxxhunt/foxxxuser/models/usermodel/fields.yaml
+defaultRedirect: foxxxhunt/foxxxuser/foxxxuserscontroller
+create:
+    redirect: 'foxxxhunt/foxxxuser/foxxxuserscontroller/update/:id'
+    redirectClose: foxxxhunt/foxxxuser/foxxxuserscontroller
+update:
+    redirect: foxxxhunt/foxxxuser/foxxxuserscontroller
+    redirectClose: foxxxhunt/foxxxuser/foxxxuserscontroller
+preview: {  }

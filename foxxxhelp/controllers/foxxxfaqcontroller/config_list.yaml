@@ -1,0 +1,12 @@
+title: FoxxxFAQController
+modelClass: foxxxhunt\Foxxxhelp\Models\FAQmodel
+list: $/foxxxhunt/foxxxhelp/models/faqmodel/columns.yaml
+recordUrl: 'foxxxhunt/foxxxhelp/foxxxfaqcontroller/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

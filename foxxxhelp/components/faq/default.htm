@@ -1,0 +1,15 @@
+<div>
+  <h1>F.A.Q.</h1>
+  <section id="faq">
+    <figure>
+        {% for faq in __SELF__.faq %}
+        <blockquote class="blockquote">
+          <p><i>"{{ faq.question}}"</i></p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+            {{ faq.answer }}
+        </figcaption>
+        {% endfor %}
+    </figure>
+  </section>
+</div>

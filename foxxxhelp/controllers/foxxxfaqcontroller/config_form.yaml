@@ -1,0 +1,11 @@
+name: FoxxxFAQController
+modelClass: foxxxhunt\Foxxxhelp\Models\FAQmodel
+form: $/foxxxhunt/foxxxhelp/models/faqmodel/fields.yaml
+defaultRedirect: foxxxhunt/foxxxhelp/foxxxfaqcontroller
+create:
+    redirect: 'foxxxhunt/foxxxhelp/foxxxfaqcontroller/update/:id'
+    redirectClose: foxxxhunt/foxxxhelp/foxxxfaqcontroller
+update:
+    redirect: foxxxhunt/foxxxhelp/foxxxfaqcontroller
+    redirectClose: foxxxhunt/foxxxhelp/foxxxfaqcontroller
+preview: {  }

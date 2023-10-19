@@ -1,0 +1,41 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        type: text
+    email:
+        label: Email
+        span: auto
+        type: text
+    nickname:
+        label: Nickname
+        span: auto
+        type: text
+    sex:
+        label: Sex
+        options:
+            Male: Male
+            Female: Female
+            Other: Other
+        showSearch: true
+        span: auto
+        type: dropdown
+    location:
+        label: Location
+        span: auto
+        type: text
+    account_type:
+        label: 'Account type'
+        span: auto
+        options:
+            Hunter: Hunter
+            Hunted: Hunted
+            Withness: Withness
+            Moderator: Moderator
+            Organisation: Organisation
+        showSearch: true
+        type: dropdown
+    phone:
+        label: Phone
+        span: auto
+        type: text

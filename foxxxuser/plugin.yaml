@@ -1,0 +1,17 @@
+plugin:
+    name: 'foxxxhunt.foxxxuser::lang.plugin.name'
+    description: 'foxxxhunt.foxxxuser::lang.plugin.description'
+    author: FoXXXhunt
+    icon: oc-icon-user
+    homepage: ''
+permissions:
+    usermanager:
+        tab: 'foxxxhunt.foxxxuser::lang.plugin.name'
+        label: 'User Manager'
+navigation:
+    main-menu-item-user:
+        label: FoXXXuser
+        url: foxxxhunt/foxxxuser/foxxxuserscontroller
+        icon: icon-user
+        permissions:
+            - usermanager

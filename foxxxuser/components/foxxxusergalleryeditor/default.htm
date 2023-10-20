@@ -7,7 +7,7 @@
 <div class="mt-2">
     <form data-request="onUploadPhoto" data-request-files="true">
         <input class="form-control" type="file" name="photo" accept="image/*">
-        <button class="form-control btn btn-default" type="submit">Upload foto</button>
+        <button class="form-control btn btn-default mt-2" type="submit">Upload Photo</button>
     </form>
 </div>
 
@@ -15,10 +15,10 @@
     {% for photo in photos %}
         <div class="photo-item">
             <a class="fancybox" href="{{ photo.path }}" data-fancybox="gallery">
-                <img class="img-thumbnail" src="{{ photo.path }}" alt="Afbeelding">
+                <img class="user-photo" src="{{ photo.path }}" alt="Afbeelding">
             </a>
             <form data-request="onDeletePhoto" data-request-data="photoId: {{ photo.id }}">
-                <button type="submit" class="btn btn-danger">Verwijder</button>
+                <button type="submit" class="btn btn-default btn-sm">Delete</button>
             </form>
         </div>
     {% endfor %}

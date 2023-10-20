@@ -7,7 +7,7 @@
     <div class="gallery">
         {% for photo in foxxxusergallery.photos %}
             <a class="fancybox" href="{{ photo.path }}" data-fancybox="gallery">
-                <img src="{{ photo.path }}" class="img-thumbnail" alt="{{ photo.description }}">
+                <img src="{{ photo.path }}" class="user-photo" alt="{{ photo.description }}">
             </a>
         {% endfor %}
     </div>

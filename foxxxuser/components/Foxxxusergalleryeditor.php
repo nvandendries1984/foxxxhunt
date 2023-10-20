@@ -4,6 +4,7 @@ use Cms\Classes\ComponentBase;
 use Foxxxhunt\Foxxxuser\Models\UserModel;
 use RainLab\User\Models\User;
 use Auth;
+use Input;
 use Flash;
 
 class Foxxxusergalleryeditor extends ComponentBase
@@ -65,6 +66,40 @@ class Foxxxusergalleryeditor extends ComponentBase
         // Optioneel: vernieuw de pagina of voer andere acties uit
         return redirect()->refresh();
         }
+    }
+
+    public function onUploadPhoto()
+    {
+        if (!Auth::check()) {
+            // Gebruiker is niet ingelogd
+            return;
+        }
+    
+        $user = Auth::getUser();
+        $userModel = UserModel::find($user->id); // Vervang 'UserModel' met je UserModel-naam
+    
+        if (!$userModel) {
+            // Gebruiker niet gevonden in de UserModel
+            return;
+        }
+    
+        $uploadedFile = Input::file('photo'); // Verkrijg het geüploade bestand
+    
+        // Controleer of er een bestand is geüpload
+        if ($uploadedFile) {
+            $photo = new \System\Models\File;
+            $photo->data = $uploadedFile;
+            $photo->is_public = true;
+            $photo->save();
+    
+            // Voeg de foto toe aan de relatie van de gebruiker
+            $userModel->photos()->add($photo);
+        }
+    
+        Flash::success('Photo is uploaded.');
+    
+        // Optioneel: vernieuw de pagina of voer andere acties uit
+        return redirect()->refresh();
     }
     
 }

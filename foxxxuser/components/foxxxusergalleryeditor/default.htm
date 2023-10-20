@@ -2,14 +2,25 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
-<div class="photo-gallery">
+<h1>Personal Gallery</h1>
+
+<div class="mt-2">
+    <form data-request="onUploadPhoto" data-request-files="true">
+        <input class="form-control" type="file" name="photo" accept="image/*">
+        <button class="form-control btn btn-default" type="submit">Upload foto</button>
+    </form>
+</div>
+
+<div class="photo-grid">
     {% for photo in photos %}
-        <a class="fancybox" href="{{ photo.path }}" data-fancybox="gallery">
-            <img class="img-thumbnail" src="{{ photo.path }}" alt="Afbeelding">
-        </a>
-        <form data-request="onDeletePhoto" data-request-data="photoId: {{ photo.id }}">
-            <button type="submit" class="btn btn-danger">Verwijder</button>
-        </form>
+        <div class="photo-item">
+            <a class="fancybox" href="{{ photo.path }}" data-fancybox="gallery">
+                <img class="img-thumbnail" src="{{ photo.path }}" alt="Afbeelding">
+            </a>
+            <form data-request="onDeletePhoto" data-request-data="photoId: {{ photo.id }}">
+                <button type="submit" class="btn btn-danger">Verwijder</button>
+            </form>
+        </div>
     {% endfor %}
 </div>
 

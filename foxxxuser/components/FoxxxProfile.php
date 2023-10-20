@@ -3,6 +3,7 @@
 use Cms\Classes\ComponentBase;
 use RainLab\User\Models\User as UserModel;
 use RainLab\User\Models\UserGroup;
+use Redirect;
 use Auth;
 use Flash;
 use Input;

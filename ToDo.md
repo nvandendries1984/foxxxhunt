@@ -4,7 +4,7 @@ FoXXXhunt Plugin Creation
 
 ## FoxxxUser Profile (Model) (Done)
 - FoxxxUser Profile (Done)
-- FoxxxUser Gallery
+- FoxxxUser Gallery (Done)
 - FoxxxUser Friends
 - FoxxxUser Messages
 - FoxxxUser Events

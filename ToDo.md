@@ -6,7 +6,6 @@ FoXXXhunt Plugin Creation
 - FoxxxUser Profile (Done)
 - FoxxxUser Gallery (Done)
 - FoxxxUser Friends
-- FoxxxUser Messages
 - FoxxxUser Events
 
 ## FoxxxHunt Event (Model) (Done)

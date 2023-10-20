@@ -2,6 +2,7 @@
 
 use Cms\Classes\ComponentBase;
 use RainLab\User\Models\User;
+use Auth;
 
 class Foxxxuserdetails extends ComponentBase
 {

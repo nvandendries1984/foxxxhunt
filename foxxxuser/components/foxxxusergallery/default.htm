@@ -1,13 +1,23 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
 {% if foxxxusergallery.photos %}
-<h1>Gallery</h1>
+    <h1>Gallery</h1>
     <div class="gallery">
-        <div class="photo">
-            {% for photo in foxxxusergallery.photos %}
-            <img src="{{ photo.path }}" class="img-thumbnail" alt="{{ photo.description }}">
-            {% endfor %}
-        </div>
+        {% for photo in foxxxusergallery.photos %}
+            <a class="fancybox" href="{{ photo.path }}" data-fancybox="gallery">
+                <img src="{{ photo.path }}" class="img-thumbnail" alt="{{ photo.description }}">
+            </a>
+        {% endfor %}
     </div>
 {% else %}
-<h1>Gallery</h1>
-<p>No photo's uploaded</p>
+    <h1>Gallery</h1>
+    <p>No photos uploaded</p>
 {% endif %}
+
+<script>
+    $(document).ready(function () {
+        $('.fancybox').fancybox();
+    });
+</script>

@@ -6,6 +6,3 @@ v1.0.2:
 v1.0.3:
     - 'update Rainlab.users table'
     - Update_Rainlab_User_Table.php
-v1.0.4:
-    - 'Created table foxxxhunt_foxxxuser_foxxxuserfriendstable'
-    - builder_table_create_foxxxhunt_foxxxuser_foxxxuserFriendstable.php

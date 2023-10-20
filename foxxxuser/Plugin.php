@@ -30,6 +30,7 @@ class Plugin extends PluginBase
             '\Foxxxhunt\Foxxxuser\Components\FoxxxProfile' => 'FoxxxProfile',
             '\Foxxxhunt\Foxxxuser\Components\Foxxxuserlist' => 'Foxxxuserlist',
             '\Foxxxhunt\Foxxxuser\Components\Foxxxuserdetails' => 'Foxxxuserdetails',
+            '\Foxxxhunt\Foxxxuser\Components\Foxxxusergallery' => 'Foxxxusergallery',
         ];
     }
 

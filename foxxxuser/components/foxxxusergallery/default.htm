@@ -1,0 +1,13 @@
+{% if foxxxusergallery.photos %}
+<h1>Gallery</h1>
+    <div class="gallery">
+        <div class="photo">
+            {% for photo in foxxxusergallery.photos %}
+            <img src="{{ photo.path }}" class="img-thumbnail" alt="{{ photo.description }}">
+            {% endfor %}
+        </div>
+    </div>
+{% else %}
+<h1>Gallery</h1>
+<p>No photo's uploaded</p>
+{% endif %}

@@ -40,3 +40,15 @@ fields:
         label: Phone
         span: auto
         type: text
+tabs:
+    fields:
+        photos:
+            label: Photos
+            span: full
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            type: fileupload
+            tab: Gallery

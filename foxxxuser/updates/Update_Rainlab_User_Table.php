@@ -15,6 +15,7 @@ class UpdateRainlabUserTable extends Migration
             $table->string('account_type')->nullable();
             $table->string('phone')->nullable();
             $table->string('slug')->nullable();
+            $table->string('token')->nullable();
         });
     }
 
@@ -28,6 +29,7 @@ class UpdateRainlabUserTable extends Migration
             $table->dropColumn('account_type');
             $table->dropColumn('phone');
             $table->dropColumn('slug');
+            $table->dropColumn('token');
         });
     }
 }

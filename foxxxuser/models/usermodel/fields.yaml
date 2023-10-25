@@ -40,6 +40,12 @@ fields:
         label: Phone
         span: auto
         type: text
+    token:
+        label: Token
+        type: text
+        span: right
+        unique: true
+        disabled: true  # Voeg deze lijn toe om het veld niet bewerkbaar te maken
 tabs:
     fields:
         photos:

@@ -22,4 +22,24 @@ class UserModel extends Model
     public $attachMany = [
         'photos' => \System\Models\File::class
     ];
+
+    public function beforeSave()
+    {
+        if (!$this->token) {
+            // Als er geen token is ingesteld, genereer er een
+            $this->token = $this->generateUniqueToken();
+        }
+    }
+    
+    private function generateUniqueToken()
+    {
+        $token = str_random(32); // Genereer een willekeurige token van 32 tekens
+        
+        // Controleer of de token al bestaat in de database
+        while (User::where('token', $token)->exists()) {
+            $token = str_random(32); // Genereer opnieuw als de token al bestaat
+        }
+    
+        return $token;
+    }
 }

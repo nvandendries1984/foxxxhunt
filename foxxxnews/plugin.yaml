@@ -4,3 +4,14 @@ plugin:
     author: FoXXXhunt
     icon: oc-icon-newspaper-o
     homepage: 'https://nvandendries.nl'
+permissions:
+    manager:
+        tab: 'foxxxhunt.foxxxnews::lang.plugin.name'
+        label: 'News Manager'
+navigation:
+    main-menu-item-foxxxnews:
+        label: FoXXXnews
+        url: foxxxhunt/foxxxnews/foxxxnews
+        icon: icon-newspaper-o
+        permissions:
+            - manager

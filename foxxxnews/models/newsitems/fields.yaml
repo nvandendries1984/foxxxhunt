@@ -4,8 +4,8 @@ fields:
         span: full
         required: 1
         type: text
-    richeditor1:
-        label: 'Rich Editor'
+    content:
+        label: Content
         size: large
         span: full
         required: 1
@@ -13,7 +13,7 @@ fields:
     tags:
         label: 'Tag List'
         span: auto
-        mode: array
+        mode: string
         separator: comma
         customTags: true
         useKey: false

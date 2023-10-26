@@ -1,21 +1,21 @@
 columns:
-    created_at:
-        label: created_at
-        type: datetime
-        sortable: true
-    updated_at:
-        label: updated_at
-        type: datetime
-        sortable: true
     title:
-        label: title
+        label: Title
         type: text
         sortable: true
     content:
-        label: content
+        label: Content
         type: text
         sortable: true
     tags:
-        label: tags
+        label: Tags
         type: text
+        sortable: true
+    created_at:
+        label: Created at
+        type: datetime
+        sortable: true
+    updated_at:
+        label: Updated at
+        type: datetime
         sortable: true

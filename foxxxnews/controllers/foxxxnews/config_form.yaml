@@ -1,0 +1,11 @@
+name: Foxxxnews
+modelClass: foxxxhunt\Foxxxnews\Models\NewsItems
+form: $/foxxxhunt/foxxxnews/models/newsitems/fields.yaml
+defaultRedirect: foxxxhunt/foxxxnews/foxxxnews
+create:
+    redirect: 'foxxxhunt/foxxxnews/foxxxnews/update/:id'
+    redirectClose: foxxxhunt/foxxxnews/foxxxnews
+update:
+    redirect: foxxxhunt/foxxxnews/foxxxnews
+    redirectClose: foxxxhunt/foxxxnews/foxxxnews
+preview: {  }

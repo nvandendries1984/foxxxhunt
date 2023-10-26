@@ -20,6 +20,10 @@
     .news-content {
         color: var(--fh-pink);
     }
+
+    .badge-container {
+        font-size: small;
+    }
 </style>
 
 <h1 class="news-list">Latest FoXXXnews</h1>
@@ -30,7 +34,7 @@
         <p class="news-subtitle">Posted: {{ newsItem.created_at }}</p>
         <p class="news-content">{{ newsItem.content|raw }}</p>
         <div class="badge-container"><i>
-            Tags: 
+            Tags:
             {% set tags = newsItem.tags|split(',') %}
             {% for tag in tags %}
                 <span class="badge rounded-pill text-bg-danger">{{ tag }}</span>

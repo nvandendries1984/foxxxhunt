@@ -41,6 +41,7 @@
         border: unset;
         transition: unset;
         color: var(--fh-pink)!important;
+        resize: none; /* Voorkom aanpassen van de grootte van de textarea */
     }
     /* Stijl voor de textarea placeholder */
     .form-control::placeholder {
@@ -59,7 +60,7 @@
 
 <div class="message-container">
     {{ form_ajax('onCreateMessage') }}
-    <textarea class="form-control" name="message" required maxlength="140" rows="4" placeholder="Whats on your mind..." oninput="updateCharacterCount(this)"></textarea>
+    <textarea class="form-control" name="message" required maxlength="140" rows="3" placeholder="Whats on your mind..." oninput="updateCharacterCount(this)"></textarea>
     <button class="btn btn-default btn-sm" type="submit">Plaats bericht</button>
     <div class="character-count" id="character-count">0 / 140</div> <!-- Voeg dit element toe -->
     {{ form_close() }}

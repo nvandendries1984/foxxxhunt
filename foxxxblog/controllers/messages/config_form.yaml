@@ -1,0 +1,11 @@
+name: Messages
+modelClass: foxxxhunt\Foxxxblog\Models\Messages
+form: $/foxxxhunt/foxxxblog/models/messages/fields.yaml
+defaultRedirect: foxxxhunt/foxxxblog/messages
+create:
+    redirect: 'foxxxhunt/foxxxblog/messages/update/:id'
+    redirectClose: foxxxhunt/foxxxblog/messages
+update:
+    redirect: foxxxhunt/foxxxblog/messages
+    redirectClose: foxxxhunt/foxxxblog/messages
+preview: {  }

@@ -1,0 +1,6 @@
+plugin:
+    name: 'foxxxhunt.foxxxnews::lang.plugin.name'
+    description: 'foxxxhunt.foxxxnews::lang.plugin.description'
+    author: FoXXXhunt
+    icon: oc-icon-newspaper-o
+    homepage: 'https://nvandendries.nl'

@@ -1,0 +1,17 @@
+plugin:
+    name: 'foxxxhunt.foxxxblog::lang.plugin.name'
+    description: 'foxxxhunt.foxxxblog::lang.plugin.description'
+    author: FoXXXhunt
+    icon: oc-icon-file-text-o
+    homepage: 'https://nvandendries.nl'
+permissions:
+    manager:
+        tab: 'foxxxhunt.foxxxblog::lang.plugin.name'
+        label: 'Blog Manager'
+navigation:
+    main-menu-item-foxxxblog:
+        label: FoXXXblog
+        url: foxxxhunt/foxxxblog/messages
+        icon: icon-wechat
+        permissions:
+            - manager

@@ -1,0 +1,94 @@
+<style>
+    /* Stijl voor de hele berichtcontainer */
+    .message-container {
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 4px;
+        color: var(--fh-pink);
+        background-color: #1b1b1b;
+        overflow-wrap: anywhere;
+    }
+
+    /* Stijl voor de gebruikersavatar */
+    .avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        margin-right: 10px;
+        object-fit: cover;
+    }
+
+    /* Stijl voor de gebruikersnaam */
+    .username {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    /* Stijl voor de berichttekst */
+    .message-text {
+        font-size: 16px;
+    }
+
+    /* Stijl voor tijdstempel */
+    .timestamp {
+        color: #697882;
+        font-size: 12px;
+    }
+
+    .form-control {
+        background-color: unset;
+        background-clip: unset;
+        border: unset;
+        transition: unset;
+        color: var(--fh-pink)!important;
+    }
+    /* Stijl voor de textarea placeholder */
+    .form-control::placeholder {
+        color: var(--fh-pink); /* Vervang 'your-color' door de gewenste kleur, bijvoorbeeld 'red' */
+    }
+    /* Voeg deze regel toe om de achtergrondkleur van de textarea ongewijzigd te houden */
+    .form-control:focus {
+        background-color: unset;
+        border-color: var(--fh-pink)!important;
+    }
+    
+    .character-count {
+        font-size: small;
+    }
+</style>
+
+<div class="message-container">
+    {{ form_ajax('onCreateMessage') }}
+    <textarea class="form-control" name="message" required maxlength="140" rows="4" placeholder="Whats on your mind..." oninput="updateCharacterCount(this)"></textarea>
+    <button class="btn btn-default btn-sm" type="submit">Plaats bericht</button>
+    <div class="character-count" id="character-count">0 / 140</div> <!-- Voeg dit element toe -->
+    {{ form_close() }}
+</div>
+
+<div id="messages-list">
+    {% for message in messages|reverse %}
+        <div class="message-container">
+            <div class="username">
+                <img src="{{ message.user.avatar.path }}" alt="{{ message.user.name }}" class="avatar">
+                {{ message.user.name }}
+            </div>
+            <p class="message-text">{{ message.message }}</p>
+            <div class="timestamp">{{ carbon(article.created_at).formatLocalized('%d-%m-%Y %H:%M:%S') }}</div>
+        </div>
+    {% endfor %}
+</div>
+
+<script>
+    function updateCharacterCount(textarea) {
+        const maxCharacters = 140;
+        const characterCount = textarea.value.length;
+        const characterCountElement = document.getElementById('character-count');
+        
+        if (characterCount <= maxCharacters) {
+            characterCountElement.textContent = characterCount + ' / ' + maxCharacters;
+        } else {
+            characterCountElement.textContent = 'Te veel tekens (' + characterCount + ' / ' + maxCharacters + ')';
+        }
+    }
+</script>
+

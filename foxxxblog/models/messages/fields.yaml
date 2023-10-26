@@ -1,0 +1,23 @@
+fields:
+    user:
+        label: Username
+        nameFrom: name
+        descriptionFrom: description
+        select: name
+        span: auto
+        readOnly: 1
+        type: relation
+    created_at:
+        label: 'Posted at'
+        span: auto
+        mode: datetime
+        disabled: 1
+        readOnly: 1
+        type: datepicker
+    message:
+        label: Message
+        size: small
+        span: full
+        disabled: 1
+        readOnly: 1
+        type: textarea

@@ -1,0 +1,16 @@
+columns:
+    user:
+        label: User
+        type: text
+        searchable: true
+        select: name
+        relation: user
+        cssClass: col-2
+    message:
+        label: Message
+        type: text
+        cssClass: col-9
+    created_at:
+        label: 'Created at'
+        type: datetime
+        cssClass: col-1

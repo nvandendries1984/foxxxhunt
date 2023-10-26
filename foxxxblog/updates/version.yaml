@@ -1,0 +1,8 @@
+v1.0.1:
+    - 'Initialize plugin'
+v1.0.2:
+    - 'Created table foxxxhunt_foxxxblog_messages'
+    - builder_table_create_foxxxhunt_foxxxblog_messages.php
+v1.0.3:
+    - 'Updated table foxxxhunt_foxxxblog_messages'
+    - builder_table_update_foxxxhunt_foxxxblog_messages.php

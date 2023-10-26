@@ -24,7 +24,6 @@
 
 <h1 class="news-list">Latest FoXXXnews</h1>
 
-{% if newsItem %}
 <div class="news-list">
     {% for newsItem in newsItems %}
         <h1 class="news-title">{{ newsItem.title }}</h1>
@@ -39,8 +38,3 @@
         </div>
     {% endfor %}
 </div>
-{% else %}
-<div class="news-list">
-    <p>Geen Nieuws, Sorry</p>
-</div>
-{% endif %}

@@ -58,6 +58,7 @@
     }
 </style>
 
+{% if user %}
 <div class="message-container">
     {{ form_ajax('onCreateMessage') }}
     <textarea class="form-control" name="message" required maxlength="140" rows="3" placeholder="Whats on your mind..." oninput="updateCharacterCount(this)"></textarea>
@@ -92,4 +93,5 @@
         }
     }
 </script>
+{% endif %}
 

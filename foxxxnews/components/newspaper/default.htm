@@ -1,0 +1,46 @@
+<style>
+    .news-list {
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 4px;
+        background-color: #1b1b1b;
+        overflow-wrap: anywhere;
+    }
+
+    .news-title {
+        color: white;
+    }
+
+    .news-subtitle {
+        color: var(--fh-pink);
+        font-style: italic;
+        font-size: small;
+    }
+
+    .news-content {
+        color: var(--fh-pink);
+    }
+</style>
+
+<h1 class="news-list">Latest FoXXXnews</h1>
+
+{% if newsItem %}
+<div class="news-list">
+    {% for newsItem in newsItems %}
+        <h1 class="news-title">{{ newsItem.title }}</h1>
+        <p class="news-subtitle">Posted: {{ newsItem.created_at }}</p>
+        <p class="news-content">{{ newsItem.content|raw }}</p>
+        <div class="badge-container"><i>
+            Tags: 
+            {% set tags = newsItem.tags|split(',') %}
+            {% for tag in tags %}
+                <span class="badge rounded-pill text-bg-danger">{{ tag }}</span>
+            {% endfor %}</i>
+        </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="news-list">
+    <p>Geen Nieuws, Sorry</p>
+</div>
+{% endif %}

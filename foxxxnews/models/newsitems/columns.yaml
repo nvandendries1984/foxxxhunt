@@ -5,7 +5,7 @@ columns:
         sortable: true
     content:
         label: Content
-        type: text
+        type: summary
         sortable: true
     tags:
         label: Tags
